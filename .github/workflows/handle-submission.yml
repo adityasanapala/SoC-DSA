@@ -1,0 +1,108 @@
+name: Handle Submission
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  move-submission:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Validate and extract roll number from branch name
+        id: extract
+        run: |
+          BRANCH="${{ github.event.pull_request.head.ref }}"
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+
+          # Validate roll number format: e.g. 23b0001
+          if [[ ! "$BRANCH" =~ ^[0-9]{2}b[0-9]+$ ]]; then
+            echo "invalid=true" >> $GITHUB_OUTPUT
+            echo "Branch name '$BRANCH' does not match roll number format (e.g. 23b0001). Skipping."
+            exit 0
+          fi
+
+          echo "invalid=false" >> $GITHUB_OUTPUT
+          echo "roll=$BRANCH" >> $GITHUB_OUTPUT
+
+      - name: Move submitted files to submissions folder
+        if: steps.extract.outputs.invalid != 'true'
+        id: move
+        run: |
+          ROLL="${{ steps.extract.outputs.roll }}"
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          MOVED_FILES=""
+
+          # Get files added/modified in Week */ folders by this merge
+          FILES=$(git diff --name-only --diff-filter=AM \
+            HEAD~1...HEAD | grep -E '^Week [0-9]+/' || true)
+
+          if [ -z "$FILES" ]; then
+            echo "No week files found in this PR."
+            echo "moved=" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          echo "Files to process: $FILES"
+
+          for FILE in $FILES; do
+            WEEK=$(echo "$FILE" | sed 's|/.*||')   # e.g. "Week 1"
+            FILENAME=$(basename "$FILE")
+
+            DEST="submissions/$ROLL/$WEEK/$FILENAME"
+            mkdir -p "submissions/$ROLL/$WEEK"
+            cp "$FILE" "$DEST"
+            echo "Copied $FILE -> $DEST"
+
+            # Restore the week folder file to its pre-PR state, or remove if new
+            if git show HEAD~1:"$FILE" > /dev/null 2>&1; then
+              git checkout HEAD~1 -- "$FILE"
+            else
+              git rm -f "$FILE"
+            fi
+
+            MOVED_FILES="$MOVED_FILES\n- \`$DEST\`"
+          done
+
+          git add submissions/
+          git add -u
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "submission: $ROLL (PR #$PR_NUMBER)" || echo "Nothing to commit"
+          git push
+
+          echo "moved=$MOVED_FILES" >> $GITHUB_OUTPUT
+
+      - name: Comment on PR
+        if: steps.extract.outputs.invalid != 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const moved = `${{ steps.move.outputs.moved }}`;
+            const roll = `${{ steps.extract.outputs.roll }}`;
+
+            let body;
+            if (!moved || moved.trim() === "") {
+              body = `👋 Hi @${{ github.event.pull_request.user.login }}! Your PR was merged, but no files were found inside \`Week */\` folders — nothing was moved to submissions. If this is unexpected, please check your folder names match the format \`Week 1\`, \`Week 2\`, etc.`;
+            } else {
+              body = `✅ Submission received for **${roll}**!\n\nThe following files have been moved to your submissions folder:\n${moved}\n\nThanks for submitting!`;
+            }
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ github.event.pull_request.number }},
+              body: body
+            });
