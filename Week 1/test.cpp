@@ -178,7 +178,7 @@ void test_reflect() {
 
     // Reflecting an already-parallel-to-normal ray
     Vec3 straight(0, 1, 0);
-    check(approxVec(straight.reflect(up), -1 * straight),   "parallel to normal reflects back on itself");
+    check(approxVec(straight.reflect(up), -1*straight),   "parallel to normal unchanged");
 
     // Length preserved
     Vec3 v(1, -2, 3);
