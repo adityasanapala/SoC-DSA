@@ -18,4 +18,5 @@ cin.tie(NULL);
         prevc=c;
     }
     cout << ans;
+    
 }

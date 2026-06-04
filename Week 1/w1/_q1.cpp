@@ -10,4 +10,5 @@ int main(){
         sum = sum - temp;
     }
    cout << sum; 
+   
 }

@@ -21,6 +21,7 @@ for(int i=0;i<p;i++){
         cout<<"YES\n";
     }
     else{
+ 
         cout<<"NO\n";
     }
 }
