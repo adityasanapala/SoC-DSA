@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Webpage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .tab {
+            display: none;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My Personal Website</h1>
+
+<button onclick="showTab('intro')">Intro</button>
+<button onclick="showTab('achievements')">Achievements</button>
+<button onclick="showTab('contact')">Contact</button>
+
+<div id="intro" class="tab">
+    <h2>Introduction</h2>
+    <p>
+        Hi! I am Prachit, a 2nd year student interested in nothing.
+    </p>
+</div>
+
+<div id="achievements" class="tab">
+    <h2>Achievements</h2>
+    <ul>
+        <li>Qualified JEE Advanced</li>
+        <li>Studying at IIT Bombay CSE</li>
+        <li>Building projects</li>
+    </ul>
+</div>
+
+<div id="contact" class="tab">
+    <h2>Contact</h2>
+    <p>
+    Email:
+    <a href="mailto:prachitgowalkar18@gmail.com">
+        prachitgowalkar18@gmail.com
+    </a>
+</p>
+    <p>Phone: 9876543210</p>
+</div>
+
+<script>
+function showTab(tabId) {
+    let tabs = document.getElementsByClassName("tab");
+
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    document.getElementById(tabId).style.display = "block";
+}
+
+showTab("intro");
+</script>
+
+</body>
+</html>
