@@ -1,3 +1,4 @@
+
 # Week 1 (25 May - 31 May): Core Data Structures
 
 ## Goals for the week
