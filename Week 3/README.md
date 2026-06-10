@@ -12,10 +12,6 @@ Focus:
 
 ---
 
-## Warm-up Task
-
----
-
 ## Core Concepts & Practice
 
 ### About Search: Binary and other algorithms
@@ -36,6 +32,10 @@ Focus:
 Prefix sums
 Two pointers
 Sliding window
+
+---
+
+## Warm-up Task
 
 ---
 
