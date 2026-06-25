@@ -1,1 +1,1 @@
-This repo contains my DSA practiced problems
+This repository contains my DSA practiced problems
