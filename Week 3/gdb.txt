@@ -1,0 +1,4 @@
+Reading symbols from ./a.out...
+❌️ No symbol "i" in current context.
+❌️ Ambiguous command "in": inf, inferior, info, init-if-undefined, inspect, internals, interpreter-exec, interrupt.
+❌️ The program is not being run.
