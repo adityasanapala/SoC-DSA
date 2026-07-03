@@ -5,6 +5,7 @@
 #include <queue>
 #include <unordered_set>
 #include <stack>
+#include <queue>
 using namespace std; 
 
 template <typename T>
@@ -210,7 +211,51 @@ void levelOrder(TreeNode* root){
         if (curr->right) q.push(curr->right);
     }
 }
+//Graphs
+//DFS 
+vector<vector<int>> adj={
+        {},
+        {2,3},
+        {1,4},
+        {1,4},
+        {2,3,5},
+        {4}
+    };
+vector<bool> visited(6,false);
 
+void DFS_helper(int start){
+    for(int x: adj[start]){
+        if(!visited[x]){
+            cout<<x<<" ";
+            visited[x]=true;
+            DFS_helper(x);
+        }
+    }
+}
+void DFS(int start){
+    cout<<start<<" ";
+    visited[start]=true;
+    DFS_helper(start);
+
+}
+
+void BFS(int start){
+    vector<bool> visited(6,false);
+    queue<int> q;
+    q.push(start);
+    visited[start]=true;
+    while(!q.empty()){
+        int temp = q.front();
+        cout<<temp<<" "; 
+        for(int x:adj[temp]){
+            if(!visited[temp]){
+                q.push(x);
+                visited[x]=true;
+            }
+        }
+        q.pop();
+    }
+}
 
 
 int main(){
@@ -232,6 +277,10 @@ int main(){
     cout<<"\nInorder Traversal: "; inorder(root);
     cout<<"\nPostorder Traversal: "; postorder(root);
     cout<<"\nLevelorder Trversal: "; levelOrder(root);
+
+    //graphs
+    cout<<"\nDFS order : "; DFS(1);
+    cout<<"\nBFS order : "; BFS(1);
 
 
     //Reflections
