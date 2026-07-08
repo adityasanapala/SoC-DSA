@@ -1,0 +1,16 @@
+1. How does a stack help recursion?
+Ans.: Every recursive function call is stored on the call stack. The stack remembers local variables and the return address so execution can continue after the recursive call finishes.
+
+2. Why does BFS use a queue?
+Ans.: BFS visits nodes level by level. A queue ensures that the first discovered node is processed first (FIFO), allowing exploration one level at a time.
+
+3. When would you prefer DFS over BFS?
+Ans.: We should use DFS when:
+Searching deep paths.
+Solving maze/backtracking problems.
+Detecting cycles.
+Performing tree traversals.
+Topological sorting.
+
+4. What information must be stored to avoid revisiting nodes?
+Ans.: A visited array (or set) is maintained. Whenever a node is visited, it is marked as visited so it is not processed again.
