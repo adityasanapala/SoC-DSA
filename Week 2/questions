@@ -1,0 +1,23 @@
+1. How does a stack help recursion?
+
+Every recursive function call is stored on the call stack, which keeps track of local variables, parameters, and the return address. When a function finishes, the most recent call is removed first (Last-In, First-Out), exactly matching stack behavior.
+
+2. Why does BFS use a queue?
+
+BFS explores nodes level by level. A queue processes nodes in First-In, First-Out (FIFO) order, ensuring that all neighbors at the current depth are visited before moving to the next depth.
+
+3. When would you prefer DFS over BFS?
+
+DFS is preferred when:
+
+Exploring all possible paths
+Backtracking problems
+Detecting cycles
+Topological sorting
+Memory usage should be lower on wide graphs
+
+BFS is generally preferred for finding the shortest path in an unweighted graph.
+
+4. What information must be stored to avoid revisiting nodes in a graph?
+
+Maintain a visited set/array (e.g., vector<bool> visited) that records whether each node has already been explored. This prevents infinite loops and redundant processing in graphs containing cycles.
