@@ -1,0 +1,11 @@
+1. How does recursion implicitly use a stack?
+A. Everytime a recursion is called, the function goes up a level (like adding to a stack). While going back, it is like popping the top element.
+
+2. Why is a queue required for BFS?
+A. As BFS goes over the immediate neighbours, the elements have to get in line in terms of the distance from the vertex. So, a queue is used.
+
+3. What are the key differences between DFS and BFS?
+A. DFS visits the first unvisited neighbour of any vertex, making it go deep and then backtrack. On the other hand, BFS goes layer by layer. DFS uses a stack(recursion) and BFS uses a queue.
+
+4. Why is a visited array/set necessary in graph traversal?
+A. Since there is no hierarchy in a graph, it is imprortant to keep a visited array. Without it, traversing the graph is not possible as during the traversal, it might go back to vertex which has already been visited and over-count it. This may also cause a cycle, making it impossible to traverse the entire graph.
