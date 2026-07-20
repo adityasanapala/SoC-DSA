@@ -11,6 +11,38 @@ The idea is to build intuition for traversal, state exploration, and systematic 
 
 ---
 
+## Core Concepts & Practice
+
+### Stacks and Queues
+
+- **Core Concept:**
+
+- 
+
+### Lists and Related Structures
+
+- **Core Concept:**
+
+- 
+
+### Graph Theory and Trees
+
+- **Core Concept:** [USACO Guide to Graphs](https://usaco.guide/bronze/intro-graphs?lang=cpp)
+
+- 
+
+### Recursion
+
+- **Core Concept:**
+
+- 
+
+### Graph Searching Algorithms
+
+- **Core Concept:**
+
+- [bfs](https://youtu.be/HZ5YTanv5QE?si=0FImbsVK1M10bx9M)
+
 ## Warm-up Task: Traversal Explorer
 
 Get comfortable with implementing and visualizing basic traversals using stacks, queues, recursion, and graphs.
@@ -60,7 +92,7 @@ Use the provided `./test_stack` executable to validate your implementation:
 
 ```bash
 ./test_stack
-```
+`
 
 <!---## Implementation hints
 
@@ -239,39 +271,7 @@ Submit:
 The goal is not optimization but developing intuition for traversal, recursion, and state exploration.
 
 
----
 
-## Core Concepts & Practice
-
-### Stacks and Queues
-
-- **Core Concept:**
-
-- 
-
-### Lists and Related Structures
-
-- **Core Concept:**
-
-- 
-
-### Graph Theory and Trees
-
-- **Core Concept:** [USACO Guide to Graphs](https://usaco.guide/bronze/intro-graphs?lang=cpp)
-
-- 
-
-### Recursion
-
-- **Core Concept:**
-
-- 
-
-### Graph Searching Algorithms
-
-- **Core Concept:**
-
-- [bfs](https://youtu.be/HZ5YTanv5QE?si=0FImbsVK1M10bx9M)
 
 
 # Warm-Up Task: Traversal Fundamentals
@@ -451,13 +451,31 @@ Verify that all traversals and operations produce the expected outputs.
 
 ## Problems to Submit
 
-
+- [Playlist](https://cses.fi/problemset/task/1141)
+- [Sum of Two Values](https://cses.fi/problemset/task/1640)
+- [Sum of Three Values](https://cses.fi/problemset/task/1641)
+- [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/description/)
+- [Stick Lengths](https://cses.fi/problemset/task/1074)
+- [Min Max Sort](https://codeforces.com/problemset/problem/1792/C)
+- [2^Sort](https://codeforces.com/problemset/problem/1692/G)
+- [Longest K-good segment](https://codeforces.com/contest/616/problem/D)
+- [Nested Ranges Count](https://cses.fi/problemset/task/2169)
+- [Rooks Defenders](https://codeforces.com/problemset/problem/1679/C)
 
 ---
 
 ## Tasks for Competitive Programming
 
-
+- Go through [C++ sort](https://www.geeksforgeeks.org/sort-c-stl/) function.
+- Read Chapter 5 and Chapter 8 from this [Competitive Programmer's Handbook](https://github.com/sakshamrathi21/SOC-Conquering_Competitive_Programming/blob/main/Resources/Competitive%20Programmer_s%20Handbook.pdf?usp=sharing).
+- Go through Chapters 4-5 and 8 from this [Guide to Competitive Programming](https://github.com/sakshamrathi21/SOC-Conquering_Competitive_Programming/blob/main/Resources/Guide%20to%20Competitive%20Programming.pdf?usp=sharing).
+- Try solving these problems:
+    - [Matryoshkas](https://codeforces.com/problemset/problem/1790/D)
+    - [Playing in a casino](https://codeforces.com/problemset/problem/1808/B)
+    - [Sum of four values](https://cses.fi/problemset/task/1642)
+    - [Sliding Window Median](https://cses.fi/problemset/task/1076)
+    - [Sliding Window Cost](https://cses.fi/problemset/task/1077)
+- [Fun Problem](https://codeforces.com/contest/1764/problem/G2) (You can maybe read its tutorial for reference)
 
 ---
 
@@ -468,28 +486,8 @@ Verify that all traversals and operations produce the expected outputs.
 
 
 
-## Week 2 (3 June - 9 June)
 
-- Go through [C++ sort](https://www.geeksforgeeks.org/sort-c-stl/) function.
-- Read Chapter 5 and Chapter 8 from this [Competitive Programmer's Handbook](https://github.com/sakshamrathi21/SOC-Conquering_Competitive_Programming/blob/main/Resources/Competitive%20Programmer_s%20Handbook.pdf?usp=sharing).
-- Go through Chapters 4-5 and 8 from this [Guide to Competitive Programming](https://github.com/sakshamrathi21/SOC-Conquering_Competitive_Programming/blob/main/Resources/Guide%20to%20Competitive%20Programming.pdf?usp=sharing).
+
 - Please read this [document](https://github.com/sakshamrathi21/SOC-Conquering_Competitive_Programming/blob/main/Resources/Some%20Techniques.pdf) for some common techniques.
-- ### Questions to be submitted:
-    1. [Playlist](https://cses.fi/problemset/task/1141) (w2\_q1.cpp)			    	
-    1. [Sum of Two Values](https://cses.fi/problemset/task/1640) (w2\_q2.cpp)		
-    1. [Sum of Three Values](https://cses.fi/problemset/task/1641) (w2\_q3.cpp)		
-    1. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/description/)(w2\_q4.cpp)         
-    1. [Stick Lengths](https://cses.fi/problemset/task/1074) (w2\_q5.cpp)			
-- ### Questions for your practice 
-    1. [Min Max Sort](https://codeforces.com/problemset/problem/1792/C)					
-    1. [2^Sort](https://codeforces.com/problemset/problem/1692/G)						
-    1. [Longest K-good segment](https://codeforces.com/contest/616/problem/D)			
-    1. [Nested Ranges Count](https://cses.fi/problemset/task/2169#:~:text=CSES%20%2D%20Nested%20Ranges%20Count&text=Given%20n%20ranges%2C%20your%20task,c%20and%20d%E2%89%A4b.&text=The%20first%20input%20line%20has,n%3A%20the%20number%20of%20ranges.)
-    1. [Rooks Defenders](https://codeforces.com/problemset/problem/1679/C)				
-    1. [Matryoshkas](https://codeforces.com/problemset/problem/1790/D)					
-    1. [Playing in a casino](https://codeforces.com/problemset/problem/1808/B)			
-    1. [Sum of four values](https://cses.fi/problemset/task/1642)				
-    1. [Sliding Window Median](https://cses.fi/problemset/task/1076)				
-    1. [Sliding Window Cost](https://cses.fi/problemset/task/1077)			
-    1. [Fun Problem](https://codeforces.com/contest/1764/problem/G2) (You can maybe read its tutorial.)	
+
 <!---- Optional: Read Chapter-5 of this [Algorithm Design](https://github.com/sakshamrathi21/SOC-Conquering_Competitive_Programming/blob/main/Resources/Algorithm%20Design%20(J.%20Kleinberg%2C%20E.%20Tardos).pdf).---->
