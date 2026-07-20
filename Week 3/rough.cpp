@@ -17,4 +17,9 @@ void pprint(const T& v) {
     cout << "\n";
 }
 
-int main() { cout << "hi" << endl; }
+int main() {
+    string str = "aks";
+    cout << str << endl;
+    for (int i = 0; str[i] != '\0'; i++) { cout << str[i] << endl; }
+}
+// the end of a string(which is basically an array) is a null

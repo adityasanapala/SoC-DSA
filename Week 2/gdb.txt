@@ -1,0 +1,96 @@
+Reading symbols from ./a.out...
+Starting program: /home/akshit/SummerCamp/SoC-DSA/Week 2/a.out 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/nix/store/8kvxvr3pmsypxiypq4g8zy13glnfr7nx-glibc-2.42-67/lib/libthread_db.so.1".
+[Inferior 1 (process 34987) exited normally]
+Breakpoint 1 at 0x5555555551d2: file playlist.cpp, line 23.
+Starting program: /home/akshit/SummerCamp/SoC-DSA/Week 2/a.out 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/nix/store/8kvxvr3pmsypxiypq4g8zy13glnfr7nx-glibc-2.42-67/lib/libthread_db.so.1".
+
+Breakpoint 1, main () at playlist.cpp:23
+23	    cin >> n;
+24	    vint V(n);
+25	    vint N(INF, -1);
+26	    for (int i = 0; i < n; i++) { cin >> V[i]; }
+27	    N[V[0]] = 0;
+28	    for (int i = 1; i < n; i++) {
+1: ans = 1
+2: i = -141891409
+3: V[i] = <error: Cannot access memory at address 0x5555338259ec>
+❌️ No symbol "a" in current context.
+29	        int a = V[i];
+1: ans = 1
+2: i = 1
+3: V[i] = 2
+4: i = 1
+5: a = 32767
+30	        N[a] = i;
+1: ans = 1
+2: i = 1
+3: V[i] = 2
+4: i = 1
+5: a = 2
+6: N[a] = -1
+31	        if (N[a] != -1)
+1: ans = 1
+2: i = 1
+3: V[i] = 2
+4: i = 1
+5: a = 2
+6: N[a] = 1
+32	            ans = max(ans, ans + 1 - N[a]);
+1: ans = 1
+2: i = 1
+3: V[i] = 2
+4: i = 1
+5: a = 2
+6: N[a] = 1
+28	    for (int i = 1; i < n; i++) {
+1: ans = 1
+2: i = 1
+3: V[i] = 2
+4: i = 1
+29	        int a = V[i];
+1: ans = 1
+2: i = 2
+3: V[i] = 1
+4: i = 2
+5: a = 2
+6: N[a] = 1
+30	        N[a] = i;
+1: ans = 1
+2: i = 2
+3: V[i] = 1
+4: i = 2
+5: a = 1
+6: N[a] = 0
+31	        if (N[a] != -1)
+1: ans = 1
+2: i = 2
+3: V[i] = 1
+4: i = 2
+5: a = 1
+6: N[a] = 2
+32	            ans = max(ans, ans + 1 - N[a]);
+1: ans = 1
+2: i = 2
+3: V[i] = 1
+4: i = 2
+5: a = 1
+6: N[a] = 2
+28	    for (int i = 1; i < n; i++) {
+1: ans = 1
+2: i = 2
+3: V[i] = 1
+4: i = 2
+36	    cout << ans << endl;
+1: ans = 1
+37	}
+1: ans = 1
+0x00007ffff782b285 in __libc_start_call_main () from /nix/store/8kvxvr3pmsypxiypq4g8zy13glnfr7nx-glibc-2.42-67/lib/libc.so.6
+1: ans = 1
+Single stepping until exit from function __libc_start_call_main,
+which has no line number information.
+[Inferior 1 (process 35055) exited normally]
+❌️ The program is not being run.
