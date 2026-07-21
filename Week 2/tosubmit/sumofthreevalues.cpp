@@ -30,16 +30,16 @@ int main() {
         int a = V[i].first;
         int l = 1, r = n;
         while (l < r) {
+            if (r == i) { r--; }
+            else if (l == i) { l++; }
+            if (l == r) { break; }
             int sum = a + V[l].first + V[r].first;
-            // if (sum == tgt && V[l].second != i && V[r].second != i) {
             if (sum == tgt) {
-                cout << i << " " << V[l].second << " " << V[r].second << endl;
+                cout << V[i].second << " " << V[l].second << " " << V[r].second << endl;
                 return 0;
             }
-            else if (sum < tgt) { l + 1 == i ? l += 2 : l++; }
-            else if (sum > tgt) { r - 1 == i ? r -= 2 : r--; }
-            // else if (sum < tgt) { l++; }
-            // else if (sum > tgt) { r--; }
+            else if (sum < tgt) { l++; }
+            else if (sum > tgt) { r--; }
         }
     }
     cout << "IMPOSSIBLE" << endl;
