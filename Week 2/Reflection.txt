@@ -1,0 +1,9 @@
+1.How does recursion implicitly use a stack?
+    Recurrsion uses the stack system to store local variables and return addresses in Last-In,First-Out order as each nested function is invoked
+2.Why is a queue required for BFS?
+    BFS requires a First-In, First-Out queue to guarantee that nodes are visited in strict level-by-level order of their distance from the start.
+3.What are the key differences between DFS and BFS?
+    DFS explores deeply down a single path using a stack, whereas BFS expands horizontally across layers using a queue.
+4.Why is a visited array/set necessary in graph traversal?
+    A visited array/set is mandatory to prevent the traversal from falling into infinite loops when encountering cycles within the graph.
+
