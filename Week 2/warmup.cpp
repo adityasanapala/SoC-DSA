@@ -245,10 +245,9 @@ void BFS(int start){
     q.push(start);
     visited[start]=true;
     while(!q.empty()){
-        int temp = q.front();
-        cout<<temp<<" "; 
-        for(int x:adj[temp]){
-            if(!visited[temp]){
+        cout<< q.front() <<" "; 
+        for(int x:adj[q.front()]){
+            if(!visited[x]){
                 q.push(x);
                 visited[x]=true;
             }
