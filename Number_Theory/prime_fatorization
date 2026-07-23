@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+vector<ll> factors(ll n){
+    vector<ll> ans;
+    for(ll p: primes){//primes are going to be pre-computed
+        if(p*p>n){
+            if(n>1){//n is prime
+                ans.push_back(n);
+                break;
+            }
+        }
+        else{
+            while(n%p==0){
+            ans.push_back(p);
+            n/=p;
+            }
+        }
+    }
+    return ans;
+}
+
+int main(){
+    ll n;
+    cin>>n;
+    factors(n);
+}//p>sqr(n) and q>sqrt(n)=> pq|n =>pq<n
