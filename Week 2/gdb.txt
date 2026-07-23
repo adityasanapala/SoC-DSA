@@ -1,0 +1,14 @@
+Reading symbols from ./a.out...
+Starting program: /home/akshit/SummerCamp/SoC-DSA/Week 2/a.out 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/nix/store/8kvxvr3pmsypxiypq4g8zy13glnfr7nx-glibc-2.42-67/lib/libthread_db.so.1".
+
+Program received signal SIGABRT, Aborted.
+0x00007ffff789fdcc in __pthread_kill_implementation () from /nix/store/8kvxvr3pmsypxiypq4g8zy13glnfr7nx-glibc-2.42-67/lib/libc.so.6
+#0  0x00007ffff789fdcc in __pthread_kill_implementation () from /nix/store/8kvxvr3pmsypxiypq4g8zy13glnfr7nx-glibc-2.42-67/lib/libc.so.6
+#1  0x00007ffff784265e in raise () from /nix/store/8kvxvr3pmsypxiypq4g8zy13glnfr7nx-glibc-2.42-67/lib/libc.so.6
+#2  0x00007ffff7829350 in abort () from /nix/store/8kvxvr3pmsypxiypq4g8zy13glnfr7nx-glibc-2.42-67/lib/libc.so.6
+#3  0x00007ffff7cb4960 in std::__glibcxx_assert_fail(char const*, int, char const*, char const*) () from /nix/store/hngmi01i8wgi25a0byrxcn4ysz5j79mw-gcc-15.2.0-lib/lib/libstdc++.so.6
+#4  0x0000555555555778 in std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffd1e0, __n=8) at /nix/store/sq0nrnfwhkc5ljvklnrk5ps4358g4nbj-gcc-15.2.0/include/c++/15.2.0/bits/stl_vector.h:1263
+#5  0x0000555555555308 in maxSlidingWindow (V=std::vector of length 8, capacity 8 = {...}, k=3) at slidingWindowMaxnew.cpp:35
+#6  0x00005555555553ab in main () at slidingWindowMaxnew.cpp:43
